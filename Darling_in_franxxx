@@ -1,0 +1,35 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Zero Two Chatbot</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 50px; background: #ffe4e1; }
+    #chat { border: 1px solid #ccc; padding: 10px; width: 300px; margin: auto; height: 400px; overflow-y: scroll; background: #fff;}
+    input { width: 240px; padding: 5px; }
+    button { padding: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Zero Two Chatbot</h1>
+  <div id="chat"></div>
+  <input id="userInput" placeholder="Xabar yozing...">
+  <button onclick="sendMessage()">Yuborish</button>
+
+  <script>
+    function sendMessage() {
+      let input = document.getElementById('userInput').value;
+      if(!input) return;
+      let chat = document.getElementById('chat');
+      chat.innerHTML += "<b>Siz:</b> " + input + "<br>";
+      
+      // Oddiy javob misoli
+      let reply = "Zero Two: " + "Men seni kutyapman 💖";
+      chat.innerHTML += reply + "<br>";
+      document.getElementById('userInput').value = '';
+      chat.scrollTop = chat.scrollHeight;
+    }
+  </script>
+</body>
+</html>
